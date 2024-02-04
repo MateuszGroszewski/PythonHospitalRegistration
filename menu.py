@@ -19,6 +19,7 @@ def showMenu():
         match choice:
             case "1":
                 print("Add patient")
+                hospital.add_patient()
             case "2":
                 print("remove patient")
             case "3":

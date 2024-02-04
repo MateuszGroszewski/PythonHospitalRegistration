@@ -1,3 +1,6 @@
+import patient
 
 class Hospital:
-    print()
+
+    def add_patient ():
+        patient.__init__("a", "a", "a", "a")
