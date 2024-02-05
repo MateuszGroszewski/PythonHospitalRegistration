@@ -1,4 +1,5 @@
-import hospital
+from hospital import Hospital
+from patient import Patient
 
 def showMenu():
     choice = int
@@ -18,14 +19,36 @@ def showMenu():
         choice = input("Choice: ")
         match choice:
             case "1":
-                print("Add patient")
-                hospital.add_patient()
+
+
+                diseases = []
+                print("""            
+            ADD
+    ====================""")
+                name = input("Name: ")
+                lastname = input("Last name: ")
+                gender = input("Gender(M/F): ")
+                age = int(input("Age: "))
+                print("Enter diseases, enter '0' to stop adding!")
+                while True:
+                    disease = input("Disease: ")
+                    if (disease=="0"):
+                        break
+                    diseases.append(disease)
+                    patient_tmp = Patient(name, lastname, gender, age, diseases)                 
+                Hospital.add_patient(patient_tmp)
+
+
+                
             case "2":
                 print("remove patient")
             case "3":
                 print("sort patients")
             case "4":
-                print("show patients")
+                print("""       
+        SHOW PATIENTS
+    ====================""")
+                Hospital.show_patients()
             case "0":
                 print("Exiting program")
                 break

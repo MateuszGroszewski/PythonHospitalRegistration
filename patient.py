@@ -1,10 +1,11 @@
+import hospital
 
-class Patient:
+class Patient :
 
-    def __init__(self, Name, LastName, Gender, Age):
+    def __init__(self, Name, LastName, Gender, Age, Diseases):
         self.patient_name = Name
         self.patient_last_name = LastName
-        self.patient_Gender = Gender
-        self.patient_name = Age
+        self.patient_gender = Gender
+        self.patient_age = Age
+        self.patient_disease = Diseases
 
-    patients_disease = []
