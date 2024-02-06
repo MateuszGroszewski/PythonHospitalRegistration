@@ -47,11 +47,9 @@ def showMenu():
                     if (disease=="0"):
                         break
                     diseases.append(disease)
-                    patient_tmp = Patient(name, lastname, gender, age, diseases)                 
+                patient_tmp = Patient(name, lastname, gender, age, diseases)                 
                 Hospital.add_patient(patient_tmp)
 
-
-                
             case 2:
                 print("""       
        REMOVE PATIENT
@@ -59,7 +57,7 @@ def showMenu():
                 print("Enter ID number of patient that you want to remove")
                 try:
                     ID = int(input("Enter ID: "))
-                    if (ID > len(Patient_DB.patients)-1):
+                    if (ID > len(Patient_DB.patients)-1 or ID < 0):
                         print("Invalid ID")
                     else:
                         Hospital.remove_patient(ID)
@@ -72,14 +70,14 @@ def showMenu():
         SORT PATIENTS
     ====================""")
                 print("""
-        1. Sort by name A-Z
-        2. Sort by name Z-A
-        3. Sort by last name A-Z
-        4. Sort by last name Z-A
+    1. Sort by name A-Z
+    2. Sort by name Z-A
+    3. Sort by last name A-Z
+    4. Sort by last name Z-A
 """)    
                 try: 
                     sorttype = int(input("Enter your choice: "))
-                    if (sorttype > 4 or sorttype < 1):
+                    if (sorttype > 4 and sorttype < 1):
                         print("Invalid value!")
                     else:
                         Hospital.sort_patietns(sorttype)
